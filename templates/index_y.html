@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+   <head>
+      <title>DHT11</title>
+   </head>
+   <body>
+      <h1>Hello, World!</h1>
+      <h2>The date and time on the server is: {{ time }}</h2>
+      <h2>The current temperature is: {{temperature}}°C</h2>
+      <h2>The current humidity is: {{humidity}}%</h2>
+      <h2>CO2: {{co2}} ppm</h2>
+      <h2>CO: {{co}} ppm</h2>
+      <h2>Alcohol: {{alcohol}} ppm</h2>
+
+      <!--
+      <form action="/" method="get" id="activate">
+        <input type="submit" value="send" name="acti">
+      </form>
+      <form action="/" method="get" id="deactivate">
+        <input type="submit" value="send" name="deac">
+      </form>-->
+      <form action="/" method="get" id="goButton">
+        <input type="submit" value="{{activate}}" name="act">
+    </form>
+
+    <!-- <a href="/audio_report"><input type="button" value="report"></a> -->
+    <!-- <form action="/">
+       <button type="submit" name="report"> Report </button>
+    </form> -->
+    <form>
+      <a href=# id=test><button class='btn btn-default'>Test</button></a>
+  </form>
+    <!--
+	<h2>Intruder detected: {{alarm}}</h2>-->
+    <!--<button id="goButton">activate</button>-->
+    <!--<button id="goButton2" style="visibility: hidden">deactivate</button>-->
+      <script>
+         setInterval(function(){
+            window.location.reload(1)
+         }, 1000)
+         if({{alarm}}){
+            alert("kkk")
+         }
+      </script>
+
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').bind('click', function() {
+            $.getJSON('/audio_report',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+
+   </body>
+</html>
